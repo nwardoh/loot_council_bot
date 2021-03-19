@@ -23,9 +23,9 @@ client.run(TOKEN)
 async def on_message(message):
     if message.author == client.user:
         return
-    response = 'pong'
     if message.content == '+ping':
-        await message.channel.send(response)
+        await message.channel.send('pong')
+    await bot.process_commands(message)
 
 
 
