@@ -17,9 +17,15 @@ async def on_ready():
 
 client.run(TOKEN)
 
-bot = commands.Bot(command_prefix="+")
+#bot = commands.Bot(command_prefix="+")
 
-@bot.command(name='ping')
-async def ping(ctx):
-   await ctx.channel.send('pong')
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+    response = 'pong'
+    if message.content == '+ping':
+        await message.channel.send(response)
+
+
 
