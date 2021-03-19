@@ -10,10 +10,14 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
-@bot.event
-async def on_message(message):
-	if message.content == 'test':
-		await message.channel.send('Testing 1 2 3!')
+#@bot.event
+#async def on_message(message):
+#	if message.content == 'test':
+#		await message.channel.send('Testing 1 2 3!')
+
+@bot.command()
+async def ping(ctx):
+	await ctx.send('pong')
 
 bot.run(TOKEN)
 
