@@ -23,7 +23,7 @@ client.run(TOKEN)
 #async def test(ctx):
 #    await message.channel.send('testing')
 
-@bot.event
+@client.event
 async def on_message(message):
     if message.author == client.user:
         return
