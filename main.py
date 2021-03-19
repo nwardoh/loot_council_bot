@@ -15,15 +15,19 @@ client = discord.Client()
 async def on_ready():
     print(f'{client.user} has connected to Discord!'.format(client))
 
+bot = commands.Bot(command_prefix="+")
+
 client.run(TOKEN)
 
-#bot = commands.Bot(command_prefix="+")
+#@bot.command()
+#async def test(ctx):
+#    await message.channel.send('testing')
 
-@client.event
+@bot.event
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content == '+ping':
+    if message.content == 'ping':
         await message.channel.send('pong')
     await bot.process_commands(message)
 
