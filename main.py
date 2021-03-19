@@ -19,7 +19,7 @@ client.run(TOKEN)
 
 bot = commands.Bot(command_prefix="+")
 
-@bot.command()
+@bot.command(name='ping')
 async def ping(ctx):
    await ctx.channel.send('pong')
 
