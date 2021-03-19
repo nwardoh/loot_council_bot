@@ -1,7 +1,7 @@
 # bot.py
 import os
 import discord
-from discord.ext.commands import Bot
+#from discord.ext.commands import Bot
 
 bot = Bot(command_prefix="+")
 
@@ -11,9 +11,11 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
 client = discord.Client()
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
+client.run(TOKEN)
 
 #@bot.event
 #async def on_message(message):
@@ -22,7 +24,7 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-	await ctx.send('pong')
+    await ctx.send('pong')
 
 bot.run(TOKEN)
 
