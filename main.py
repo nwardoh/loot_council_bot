@@ -29,7 +29,6 @@ async def on_message(message):
         return
     if message.content == 'ping':
         await message.channel.send('pong')
-    await bot.process_commands(message)
 
-
+bot.run(TOKEN)
 
