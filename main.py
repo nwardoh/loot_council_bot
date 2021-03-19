@@ -1,7 +1,7 @@
 # bot.py
 import os
 import discord
-#from discord.ext.commands import Bot
+from discord.ext.commands import Bot
 
 bot = Bot(command_prefix="+")
 
