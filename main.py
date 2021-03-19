@@ -10,6 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
+@client.event
+async def on_ready():
+    print(f'{client.user} has connected to Discord!')
+
 #@bot.event
 #async def on_message(message):
 #	if message.content == 'test':
